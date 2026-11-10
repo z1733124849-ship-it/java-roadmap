@@ -23,4 +23,4 @@ node_modules/
 *.tmp
 
 # 克隆下来的参考项目（只读，不纳入版本管理）
-repos/
+repos/spring-boot-jwt/
