@@ -59,6 +59,7 @@ SurveyKing 是问卷系统，完成度接近真实产品，但前端是 TypeScri
 
 | 项目 | 星数 | Java 文件 | 协议 | 技术栈 |
 |---|---|---|---|---|
+| [ragent](https://github.com/nageoffer/ragent) | 4.4k | - | Apache-2.0 | Spring Boot 3 + Spring AI + MCP + RAG |
 | [interview-guide](https://github.com/Snailclimb/interview-guide) | 3.5k | 280 | AGPL-3.0 | Spring Boot 4.1 + Java 25 + Spring AI + pgvector |
 | [smart-sso](https://github.com/a466350665/smart-sso) | 2.3k | - | MIT | Spring Boot + OAuth2 单点登录 |
 | [continew-admin](https://github.com/continew-org/continew-admin) | 2.2k | - | Apache-2.0 | Spring Boot 3.4 + Vue3 + Sa-Token |
@@ -85,6 +86,12 @@ damai-thread-pool-framework          线程池
 interview-guide 是《JavaGuide》作者的项目，圈内认识的人多。技术栈很新，用到了 Java 25 和向量检索。注意 AGPL 协议，自己学习没问题，线上对外提供服务就要开源修改。
 
 continew-admin 的提交质量不错，能看到类似「修复 UserContext 线程本地跨请求残留导致的越权」这种真实修复，本身也是学习材料。但它偏脚手架，业务代码薄。
+
+ragent 是企业级 Agentic RAG，模块分成 agent、rag、infra-ai、mcp-server、framework、system，技术栈跟 AI-Meeting 同源，学完那个再来读它不费劲。23 MB，不算大。
+
+读它的时候带三个问题：模型怎么决定调哪个工具、历史对话太长怎么裁、工具报错了怎么收场。agent 项目的难点全在这三处，不在模型。
+
+想先快速看看工具调用长什么样，翻 [langchain4j-examples](https://github.com/langchain4j/langchain4j-examples)（1.9k，2.5 MB），半小时能看完，不用起项目。
 
 ### 不建议选的
 
@@ -127,6 +134,8 @@ AI-Meeting             3 周
 ```
 
 适合马上要投简历的情况。AI-Meeting 纯 Java，上手快，MIT 协议也没什么顾虑，一个月能拿出一个可以点开看的东西。
+
+交付之后如果还想往 AI 方向补，接着读 ragent。它是这条路线里唯一一个模型真的会调工具的完整系统，比再加一个 CRUD 项目有用。
 
 ### 路线三：冲后端岗，两个月
 
