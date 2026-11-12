@@ -1,0 +1,6 @@
+# @name login
+GET http://localhost:8080/login?username=admin&password=admin123
+
+###
+GET http://localhost:8080/hello
+Authorization: {{login.response.body.*}}
