@@ -1,8 +1,14 @@
 package com.example.jwt_lab;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+
+import java.util.Map;
+
+
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @RestController
@@ -20,6 +26,11 @@ public class HelloController {
     @GetMapping("/hello")
     public String hello() {
         return "Hello, World!";
+    }
+
+    @GetMapping ("/me")
+    public Map<String, String> me(@RequestAttribute("username") String username){
+        return Map.of("username", username);
     }
 
     @GetMapping("/login")
